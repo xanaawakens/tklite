@@ -107,6 +107,18 @@
                     </ul>
                 </div>
                 <div class="resource-card">
+                    <i class="fab fa-apple"></i>
+                    <h3>Apple ID</h3>
+                    <div class="apple-id-box">
+                        <div class="email-header">Email:</div>
+                        <div class="email-content" onclick="copyEmail()">
+                            <span class="email-text">ficixo8434@leupus.com</span>
+                            <i class="fas fa-copy copy-icon"></i>
+                        </div>
+                        <div class="copy-message" id="copyMessage">Click to copy</div>
+                    </div>
+                </div>
+                <div class="resource-card">
                     <i class="fab fa-tiktok"></i>
                     <h3>TikTok Lite Support</h3>
                     <ul>
@@ -144,5 +156,19 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function copyEmail() {
+            const email = "ficixo8434@leupus.com";
+            navigator.clipboard.writeText(email);
+            const message = document.getElementById("copyMessage");
+            message.textContent = "Copied!";
+            message.style.color = "#007AFF";
+            
+            setTimeout(() => {
+                message.textContent = "Click to copy";
+                message.style.color = "#666";
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
