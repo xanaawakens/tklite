@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -157,6 +157,10 @@
         <p>&copy; 2025 TKLite. All rights reserved.</p>
     </footer>
 
+    <div class="theme-switch" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </div>
+
     <script src="script.js"></script>
     <script>
         function copyEmail() {
@@ -164,13 +168,34 @@
             navigator.clipboard.writeText(email);
             const message = document.getElementById("copyMessage");
             message.textContent = "Copied!";
-            message.style.color = "#007AFF";
+            message.style.color = "var(--primary-color)";
             
             setTimeout(() => {
                 message.textContent = "Click to copy";
-                message.style.color = "#666";
+                message.style.color = "var(--text-secondary)";
             }, 2000);
         }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch i');
+            const currentTheme = html.getAttribute('data-theme');
+            
+            if (currentTheme === 'light') {
+                html.setAttribute('data-theme', 'dark');
+                themeSwitch.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                themeSwitch.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-switch i').className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     </script>
 </body>
 </html>
