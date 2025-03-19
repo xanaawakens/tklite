@@ -168,6 +168,49 @@ h2 {
     color: var(--secondary-color);
 }
 
+.qr-section {
+    padding: 3rem 0 1rem 0;
+    background-color: var(--background-color);
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.qr-box {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    max-width: 300px;
+    width: 100%;
+}
+
+.qr-box:hover {
+    transform: translateY(-5px);
+}
+
+.qr-box img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.qr-box p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
 footer {
     text-align: center;
     padding: 2rem;
@@ -187,5 +230,13 @@ footer {
     
     .resource-card {
         padding: 1.5rem;
+    }
+    
+    .qr-box {
+        padding: 1.5rem;
+    }
+    
+    .qr-box img {
+        max-width: 150px;
     }
 }
