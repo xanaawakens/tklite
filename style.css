@@ -81,9 +81,10 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--primary-color);
+    white-space: nowrap;
 }
 
 .nav-links a {
@@ -322,6 +323,12 @@ footer {
 @media (max-width: 768px) {
     .nav-links a {
         margin-left: 1rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
     }
     
     .shortcuts-grid,
